@@ -1,0 +1,22 @@
+.header {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(114, 166, 182);
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+.ulNavLinks {
+    display: flex;
+    justify-content: space-evenly;
+}
+.navLinks {
+    list-style-type: none;
+    color: white;
+}
+.navLink { 
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    cursor: pointer;
+}

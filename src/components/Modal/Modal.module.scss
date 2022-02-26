@@ -1,0 +1,77 @@
+h2 {
+    margin-top: 10px;
+}
+
+.modalBtn {
+    padding: 15px;
+    background-color: #446ab1;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+    width: 100px;
+    &:active {
+        background-color: #3832aa;
+    }
+}
+
+.modalBg {
+    background-color: rgb(82, 82, 82);
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.x {
+    float: right;
+    color: white;
+    // background-color: #d44637;
+        background-color: #4467db;
+    border: 2px solid #fff;
+    text-align: center;
+    outline: none;
+    font-size: 27px;
+    text-decoration: none;
+    padding-bottom: 20px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    &:hover,
+    &:active {
+        color: #242246;
+        border-color: #242246;
+        transition: border-color 0.4s ease-in, color 0.4s ease-in;
+    }
+}
+
+.modal {
+    text-align: center;
+    background-color: rgb(212, 159, 159);
+    height: 270px;
+    width: 520px;
+    margin: 10% auto;
+    border-radius: 10px;
+    background-color: #558cdd;
+    color: white;
+    &__topContainer {
+        height: 70px;
+        top: 0;
+        // background-color: #d44637;
+        background-color: #4467db;
+        padding: 10px;
+        border-radius: 10px 10px 0 0;
+        font-size: 20px;
+    }
+    &__body {
+        margin-top: 35px;
+        justify-content: center;
+        // margin-bottom: 20px;
+        margin-bottom: 35px;
+        font-size: 17px;
+    }
+}
