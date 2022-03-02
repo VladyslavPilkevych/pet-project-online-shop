@@ -4,83 +4,83 @@
         "price": "$14.99",
         "url": "./images/image1.png",
         "id": "1",
-        "color": "brown"
+        "color": ["brown", "yellow"]
     },
     {
         "name": "Awaken the Hero",
         "price": "$17.59",
         "url": "./images/image2.png",
         "id": "2",
-        "color": "red"
+        "color": ["red", "green", "blue"]
     },
     {
         "name": "Summer Moments",
         "price": "$8.99",
         "url": "./images/image8.png",
         "id": "3",
-        "color": "yellow"
+        "color": ["yellow", "green"]
     },
     {
         "name": "Is This Mystery",
         "price": "$14.99",
         "url": "./images/image3.png",
         "id": "4",
-        "color": "green"
+        "color": ["green", "grey", "aquamarine"]
     },
     {
         "name": "Barbecue Moods",
         "price": "$5.99",
         "url": "./images/image4.png",
         "id": "5",
-        "color": "red"
+        "color": ["red", "blueViolet"]
     },
     {
         "name": "Ravenna",
         "price": "$4.99",
         "url": "./images/image5.png",
         "id": "6",
-        "color": "black"
+        "color": ["black", "coral"]
     },
     {
         "name": "Caribou",
         "price": "$16.99",
         "url": "./images/image6.png",
         "id": "7",
-        "color": "grey"
+        "color": ["grey", "darkGreen"]
     },
     {
         "name": "Aqualung",
         "price": "$21.99",
         "url": "./images/image7.png",
         "id": "8",
-        "color": "orange"
+        "color": ["orange", "darkSalmon"]
     },
     {
         "name": "Royal Conversation",
         "price": "$15.79",
         "url": "./images/image9.png",
         "id": "9",
-        "color": "lime"
+        "color": ["lime", "forestGreen"]
     },
     {
         "name": "Cooling Memories",
         "price": "$7.89",
         "url": "./images/image10.png",
         "id": "10",
-        "color": "purple"
+        "color": ["purple", "yellow", "red", "green"]
     },
     {
         "name": "Cooling Memories",
         "price": "$22.19",
         "url": "./images/image11.png",
         "id": "11",
-        "color": "blue"
+        "color": ["blue", "yellow"]
     },
     {
         "name": "Break Nightmare",
         "price": "$2.79",
         "url": "./images/image12.png",
         "id": "12",
-        "color": "pink"
+        "color": ["pink", "purple"]
     }
 ]

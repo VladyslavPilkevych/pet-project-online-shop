@@ -18,6 +18,8 @@ function CardPageItem() {
     const [isCart, setIsCart] = useState(false);
     const [counter, setCounter] = useState(0);
     const [card, setCard] = useState(false);
+    const [buttonDis, setButtonDis] = useState(true);
+    const [elemColor, setElemColor] = useState(null);
     const { name, price, url, id, color } = card;
     const dispatch = useDispatch();
     const history = useHistory();
@@ -46,9 +48,12 @@ function CardPageItem() {
                 }
             })
         }
+        if (elemColor) {
+            document.getElementById(elemColor).classList.add(styles.customColor);
+        }
     }, []);
     useEffect(() => {
-        setCounter(prevCount => prevCount+=1);
+        setCounter(prevCount => prevCount += 1);
         // console.log(isCart);
         // console.log(counter);
         if (counter !== 0) {
@@ -76,10 +81,20 @@ function CardPageItem() {
     const changeItemColor = (elem) => {
         const allColors = document.getElementsByClassName(styles.customColor);
         // console.log(allColors);
-        if (allColors.length > 0) {
+        // console.log(elem);
+        // console.log(elem.target.id);
+        if (allColors.length === 1) {
             allColors[0].classList.remove(styles.customColor);
+            elem.target.classList.add(styles.customColor);
+            console.log("NOT first touch");
+        } else {
+            console.log("first touch");
+            elem.target.classList.add(styles.customColor);
         }
         elem.target.classList.add(styles.customColor);
+        console.log("change style");
+        setElemColor(elem.target.id);
+        setButtonDis(false);
     }
     return (
         <>
@@ -96,16 +111,26 @@ function CardPageItem() {
                         {isFavourite ? <StarRemove class={styles.star} onClick={() => removeFromFav(id)} /> : <StarIcon class={styles.star} onClick={() => addToFav(id)} />}
                     </div>
                     <div class={styles.productDescr}>
-                        <p class={styles.color}>Color {color}:</p>
+                        <p class={styles.color}>Color:</p>
                         <div class={styles.changeColor}>
-                        <div onClick={changeItemColor}class={styles.colors} style={{ backgroundColor: color }}></div>
-                        <div onClick={changeItemColor}class={styles.colors} style={{ backgroundColor: "blue" }}></div>
-                        <div onClick={changeItemColor}class={styles.colors} style={{ backgroundColor: "green" }}></div>
+                            {/* {color && color.map(item => 
+                                <div key={Math.random()} onClick={changeItemColor} class={styles.colors} style={{ backgroundColor: item }}></div>
+                            )} */}
+                            {color && color.map(item => {
+                                // if (...) {
+                                //     return <div key={Math.random()} onClick={changeItemColor} class={styles.colors + " " + styles.customColor} style={{ backgroundColor: item }}></div>
+                                // }
+                                return <div key={item} id={item} onClick={changeItemColor} class={styles.colors} style={{ backgroundColor: item }}></div>
+                            })}
                         </div>
                         <div class={styles.priceCart}>
                             <p class={styles.price}>{price}</p>
                             <div class={styles.addToCart}>
-                                {isCart ? <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button> : <Button handleClick={() => { openModal() }}>Add to Shopping Cart</Button>}
+                                {/* {isCart ? <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button> : <Button handleClick={() => { openModal() }}>Add to Shopping Cart</Button>} */}
+                                {/* {isCart && <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button>}
+                                {!isCart && <Button disabledButton={buttonDis} handleClick={() => { openModal() }}>Add to Shopping Cart</Button>} */}
+                                {isCart ? <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button>
+                                    : <Button disabledButton={buttonDis} handleClick={() => { openModal() }}>Add to Shopping Cart</Button>}
                                 {/* {isCart ? <Button handleClick={() => { openModal() }}>Add to Shopping Cart</Button> : <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button>} */}
                             </div>
                         </div>

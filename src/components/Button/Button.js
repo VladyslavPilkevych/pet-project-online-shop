@@ -3,10 +3,12 @@ import styles from './Button.module.scss';
 import PropTypes from 'prop-types';
 
 function Button(props) {
-    const { children, handleClick, type, style } = props;
-    return ( 
+    const { children, handleClick, type, style, disabledButton } = props;
+    return (
         <>
-            <button type={type} onClick={handleClick} className={styles.btn + " " + style}>{children}</button>
+            {/* <button type={type} onClick={handleClick} className={styles.btn + " " + style}>{children}</button> */}
+            {disabledButton ? <button type={type} disabled onClick={handleClick} className={styles.btn + " " + styles.btnDis + " " + style}>{children}</button>
+            : <button type={type} onClick={handleClick} className={styles.btn + " " + style}>{children}</button>}
         </>
     )
 }
@@ -18,13 +20,15 @@ Button.propTypes = {
     ]).isRequired,
     type: PropTypes.oneOf(['submit', 'button']),
     handleClick: PropTypes.func,
-    style: PropTypes.string
+    style: PropTypes.string,
+    disabledButton: PropTypes.bool,
 }
 
 Button.defaultProps = {
     type: 'button',
-    handleClick: ()=>{},
+    handleClick: () => { },
     style: '',
+    disabledButton: false,
 }
 
 export default memo(Button);

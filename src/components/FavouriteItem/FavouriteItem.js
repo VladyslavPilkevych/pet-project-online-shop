@@ -6,7 +6,7 @@ import { ReactComponent as StarRemove } from "../../assets/svg/star-remove.svg";
 import { removeFromFavourite } from "../../store/actionCreators/favouriteAC";
 import { useDispatch } from "react-redux";
 import { setConfigModal, setIsOpenModal } from "../../store/actionCreators/modalAC";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function FavouriteItem(props) {
@@ -31,7 +31,12 @@ function FavouriteItem(props) {
                     <h3>{name}</h3>
                     <div class={styles.stars}></div>
                     <span class={styles.price}>{price}</span>
-                    <p class={styles.colorContainer}>Cover color: {color} <div class={styles.colors} style={{ backgroundColor: color }}></div></p>
+                    <p class={styles.colorContainer}>Cover color:
+                        {/* <div class={styles.colors} style={{ backgroundColor: color[0] }}></div> */}
+                        {color && color.map(item =>
+                            <div key={Math.random()} class={styles.colors} style={{ backgroundColor: item }}></div>
+                        )}
+                    </p>
                     <div class={styles.actions}>
                         <div class={styles.addToCart}>
                             <Button handleClick={() => { openModal() }}>Add to Shopping Cart</Button>
@@ -40,7 +45,6 @@ function FavouriteItem(props) {
                             <div className={styles.favourites}>
                                 <StarRemove onClick={() => removeFromFav(id)} />
                             </div>
-
                         </div>
                     </div>
                 </div>
