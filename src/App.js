@@ -8,7 +8,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Modal from "./components/Modal/Modal.js"
 
-
 function App() {
   return (
     <Provider store={store}>
@@ -23,5 +22,4 @@ function App() {
     </Provider>
   );
 }
-
 export default App;

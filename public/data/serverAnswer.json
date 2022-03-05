@@ -3,83 +3,95 @@
         "name": "Oh my Deer",
         "price": "$14.99",
         "url": "./images/image1.png",
+        "img": [{"original": "./images/image1.png", "thumbnail": "./images/image1.png"}, {"original":"./images/image2.png", "thumbnail": "./images/image2.png"}],
         "id": "1",
         "color": ["brown", "yellow"]
     },
     {
         "name": "Awaken the Hero",
         "price": "$17.59",
-        "url": "./images/image2.png",
+        "url": "./images/image3.png",
+        "img": [{"original": "./images/image3.png", "thumbnail": "./images/image3.png"}, {"original":"./images/image4.png", "thumbnail": "./images/image4.png"}],
         "id": "2",
         "color": ["red", "green", "blue"]
     },
     {
         "name": "Summer Moments",
         "price": "$8.99",
-        "url": "./images/image8.png",
+        "url": "./images/image5.png",
+        "img": [{"original": "./images/image5.png", "thumbnail": "./images/image5.png"}, {"original":"./images/image6.png", "thumbnail": "./images/image6.png"}],
         "id": "3",
         "color": ["yellow", "green"]
     },
     {
         "name": "Is This Mystery",
         "price": "$14.99",
-        "url": "./images/image3.png",
+        "url": "./images/image7.png",
+        "img": [{"original": "./images/image7.png", "thumbnail": "./images/image7.png"}, {"original":"./images/image8.png", "thumbnail": "./images/image8.png"}],
         "id": "4",
         "color": ["green", "grey", "aquamarine"]
     },
     {
         "name": "Barbecue Moods",
         "price": "$5.99",
-        "url": "./images/image4.png",
+        "url": "./images/image9.png",
+        "img": [{"original": "./images/image9.png", "thumbnail": "./images/image9.png"}, {"original":"./images/image20.png", "thumbnail": "./images/image20.png"}, {"original":"./images/image12.png", "thumbnail": "./images/image12.png"}],
         "id": "5",
         "color": ["red", "blueViolet"]
     },
     {
         "name": "Ravenna",
         "price": "$4.99",
-        "url": "./images/image5.png",
+        "url": "./images/image11.png",
+        "img": [{"original": "./images/image11.png", "thumbnail": "./images/image11.png"}, {"original":"./images/image10.png", "thumbnail": "./images/image10.png"}],
         "id": "6",
         "color": ["black", "coral"]
     },
     {
         "name": "Caribou",
         "price": "$16.99",
-        "url": "./images/image6.png",
+        "url": "./images/image13.png",
+        "img": [{"original": "./images/image13.png", "thumbnail": "./images/image13.png"}, {"original":"./images/image14.png", "thumbnail": "./images/image14.png"}],
         "id": "7",
         "color": ["grey", "darkGreen"]
     },
     {
         "name": "Aqualung",
         "price": "$21.99",
-        "url": "./images/image7.png",
+        "url": "./images/image15.png",
+        "img": [{"original": "./images/image15.png", "thumbnail": "./images/image15.png"}, {"original":"./images/image16.png", "thumbnail": "./images/image16.png"}],
         "id": "8",
         "color": ["orange", "darkSalmon"]
     },
     {
         "name": "Royal Conversation",
         "price": "$15.79",
-        "url": "./images/image9.png",
+        "url": "./images/image17.png",
+        "img": [{"original": "./images/image17.png", "thumbnail": "./images/image17.png"}, {"original":"./images/image18.png", "thumbnail": "./images/image18.png"}, {"original":"./images/image25.png", "thumbnail": "./images/image25.png"}],
         "id": "9",
         "color": ["lime", "forestGreen"]
     },
     {
         "name": "Cooling Memories",
         "price": "$7.89",
-        "url": "./images/image10.png",
+        "url": "./images/image19.png",
+        "img": [{"original": "./images/image19.png", "thumbnail": "./images/image19.png"}, {"original":"./images/image26.png", "thumbnail": "./images/image26.png"}],
         "id": "10",
         "color": ["purple", "yellow", "red", "green"]
     },
     {
         "name": "Cooling Memories",
         "price": "$22.19",
-        "url": "./images/image11.png",
+        "url": "./images/image21.png",
+        "img": [{"original": "./images/image21.png", "thumbnail": "./images/image21.png"}, {"original":"./images/image22.png", "thumbnail": "./images/image22.png"}],
         "id": "11",
         "color": ["blue", "yellow"]
     },
     {
         "name": "Break Nightmare",
         "price": "$2.79",
-        "url": "./images/image12.png",
+        "url": "./images/image23.png",
+        "img": [{"original": "./images/image23.png", "thumbnail": "./images/image23.png"}, {"original":"./images/image24.png", "thumbnail": "./images/image24.png"}],
         "id": "12",
         "color": ["pink", "purple"]
     }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from "react";
+import React, { memo } from "react";
 import styles from './FavouriteItem.module.scss';
 import PropTypes from 'prop-types';
 import Button from "../Button/Button.js";
@@ -23,7 +23,6 @@ function FavouriteItem(props) {
         <>
             <div id={id} class={styles.productItem}>
                 <div class={styles.productImg}>
-                    {/* <img src={url} /> */}
                     <Link to={`/card:${id}`}><img src={url} /></Link>
 
                 </div>
@@ -32,7 +31,6 @@ function FavouriteItem(props) {
                     <div class={styles.stars}></div>
                     <span class={styles.price}>{price}</span>
                     <p class={styles.colorContainer}>Cover color:
-                        {/* <div class={styles.colors} style={{ backgroundColor: color[0] }}></div> */}
                         {color && color.map(item =>
                             <div key={Math.random()} class={styles.colors} style={{ backgroundColor: item }}></div>
                         )}

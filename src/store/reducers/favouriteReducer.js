@@ -1,9 +1,8 @@
 import { PUT_IN_FAVOURITE, DELETE_FROM_FAVOURITE } from "../actions/favouriteItemsActions.js";
 import { getItemFromLS, setItemToLS } from "../../utils/localStorage";
-getItemFromLS('favourite');
 
+getItemFromLS('favourite');
 const initialState = {
-    // inFavourite: null,
     inFavourite: getItemFromLS('favourite') ? getItemFromLS('favourite').inFavourite : null,
 };
 
@@ -28,5 +27,4 @@ const favouriteReducer = (state = initialState, action) => {
             return state;
     }
 };
-
 export default favouriteReducer;

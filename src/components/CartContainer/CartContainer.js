@@ -6,13 +6,9 @@ import AuthForm from "../AuthForm/AuthForm.js"
 
 function CartContainer() {
     const cartData = useSelector((state)=>state.cart.inCart);
-    // console.log(cartData);
-    // console.log(typeof cartData);
-    // console.log(Object.keys(cartData).length === 0);
     return (
         <>
             <section className={styles.cardContainer}>
-                {/* {cartData ? cartData.map((item) => <CartItem key={item.id} itemContent={item} />) : <h1>No cart items here</h1> } */}
                 {cartData ? cartData.map((item) => <CartItem key={item.id} itemContent={item} />) : <h1>No cart items here</h1>}
                 {cartData && Object.keys(cartData).length === 0 && <h1>No cart items here</h1>}
             </section>

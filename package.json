@@ -1,5 +1,5 @@
 {
-  "name": "homework4",
+  "name": "pet-project-online-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +14,7 @@
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-image-gallery": "^1.2.7",
     "react-number-format": "^4.9.1",
     "react-redux": "^7.2.6",
     "react-router-dom": "5.3.0",

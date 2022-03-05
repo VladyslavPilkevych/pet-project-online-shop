@@ -6,7 +6,6 @@ import CardPage from "../pages/CardPage/CardPage.js";
 import FavouritePage from "../pages/FavouritePage/FavouritePage.js";
 import NoMatchPage from "../pages/NoMatchPage/NoMatchPage.js";
 
-
 const Routes = () => {
     return (
         <Switch>
@@ -28,4 +27,4 @@ const Routes = () => {
         </Switch>
     )
 }
-export default Routes
+export default Routes;

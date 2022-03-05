@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 function CardItem(props) {
     const inFavourite = useSelector((state) => state.favourite.inFavourite);
-    const { itemContent, itemContent: { name, price, url, id, color } } = props;
+    const { itemContent: { name, price, url, id, color } } = props;
     const [isFavourite, setIsFavourite] = useState(false);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -39,8 +39,6 @@ function CardItem(props) {
         <>
             <div id={id} class={styles.productItem}>
                 <div class={styles.productImg}>
-                    {/* <img src={url} /> */}
-                    {/* <a onClick={openCardPage} href={`/card/${id}`}><img src={url} /></a> */}
                     <Link to={`/card:${id}`}><img src={url} /></Link>
                 </div>
                 <div class={styles.productIist}>
@@ -48,7 +46,6 @@ function CardItem(props) {
                     <div class={styles.stars}></div>
                     <span class={styles.price}>{price}</span>
                     <p class={styles.colorContainer}>Cover color:
-                        {/* <div class={styles.colors} style={{ backgroundColor: color[0] }}></div> */}
                         {color && color.map(item =>
                             <div key={Math.random()} class={styles.colors} style={{ backgroundColor: item }}></div>
                         )}

@@ -1,9 +1,8 @@
 import { PUT_IN_CART, DELETE_FROM_CART, CLEAR_CART } from "../actions/cartItemsActions.js";
 import { getItemFromLS, setItemToLS, removeItemFromLS } from "../../utils/localStorage";
-getItemFromLS('cart');
 
+getItemFromLS('cart');
 const initialState = {
-    // inCart: null,
     inCart: getItemFromLS('cart') ? getItemFromLS('cart').inCart : null,
 };
 
@@ -37,5 +36,4 @@ const cartReducer = (state = initialState, action) => {
             return state;
     }
 };
-
 export default cartReducer;

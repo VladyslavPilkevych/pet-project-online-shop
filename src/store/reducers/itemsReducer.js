@@ -1,9 +1,8 @@
 import { FETCH_DATA } from "../actions/itemsActions";
 import { getItemFromLS, setItemToLS } from "../../utils/localStorage";
-getItemFromLS('items');
 
+getItemFromLS('items');
 const initialState = {
-    // items: [],
     items: getItemFromLS('items') ? getItemFromLS('items').items : null,
 };
 
@@ -17,5 +16,4 @@ const itemsReducer = (state = initialState, action) => {
             return state;
     }
 };
-
 export default itemsReducer;

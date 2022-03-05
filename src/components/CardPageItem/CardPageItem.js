@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, useState, memo, PureComponent } from "react";
 import styles from './CardPageItem.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -8,7 +8,7 @@ import { ReactComponent as StarRemove } from "../../assets/svg/star-remove.svg";
 import { addToFavourite, removeFromFavourite } from "../../store/actionCreators/favouriteAC.js";
 import { setConfigModal, setIsOpenModal } from "../../store/actionCreators/modalAC.js";
 import { fetchData } from "../../store/actionCreators/itemAC.js";
-// import PropTypes from 'prop-types';
+import ImageGallery from 'react-image-gallery';
 
 function CardPageItem() {
     const inFavourite = useSelector((state) => state.favourite.inFavourite);
@@ -20,7 +20,9 @@ function CardPageItem() {
     const [card, setCard] = useState(false);
     const [buttonDis, setButtonDis] = useState(true);
     const [elemColor, setElemColor] = useState(null);
-    const { name, price, url, id, color } = card;
+    const { name, price, url, id, color, img: images } = card;
+    // console.log(url);
+    // console.log(images);
     const dispatch = useDispatch();
     const history = useHistory();
     useEffect(() => {
@@ -34,7 +36,6 @@ function CardPageItem() {
         })
         if (inFavourite) {
             inFavourite.forEach(item => {
-                // if (item.id === id) {
                 if (item.id === words[1]) {
                     return setIsFavourite(true);
                 }
@@ -42,7 +43,6 @@ function CardPageItem() {
         }
         if (cart) {
             cart.forEach(item => {
-                // if (item.id === id) {
                 if (item.id === words[1]) {
                     return setIsCart(true);
                 }
@@ -54,8 +54,6 @@ function CardPageItem() {
     }, []);
     useEffect(() => {
         setCounter(prevCount => prevCount += 1);
-        // console.log(isCart);
-        // console.log(counter);
         if (counter !== 0) {
             setIsCart(prevState => !prevState);
         }
@@ -69,20 +67,15 @@ function CardPageItem() {
         setIsFavourite(false);
     }
     const openModal = () => {
-        // setIsCart(prevState => !prevState);
         dispatch(setIsOpenModal(true));
         dispatch(setConfigModal({ id, title: "Add to cart?", body: "Are you sure you want to add this item to your shopping cart?" }))
     }
     const openDeleteModal = () => {
-        // setIsCart(prevState => !prevState);
         dispatch(setIsOpenModal(true));
         dispatch(setConfigModal({ id, toggleAddRemoveItem: true, title: "Delete from cart?", body: "Are you sure you want to delete this item from your shopping cart?" }))
     }
     const changeItemColor = (elem) => {
         const allColors = document.getElementsByClassName(styles.customColor);
-        // console.log(allColors);
-        // console.log(elem);
-        // console.log(elem.target.id);
         if (allColors.length === 1) {
             allColors[0].classList.remove(styles.customColor);
             elem.target.classList.add(styles.customColor);
@@ -100,7 +93,9 @@ function CardPageItem() {
         <>
             <div id={id} class={styles.productItem}>
                 <div class={styles.productImgDiv}>
-                    <img class={styles.productImg} src={url} />
+                    {images &&
+                        <ImageGallery items={images} />
+                    }
                 </div>
                 <div class={styles.productIist}>
                     <div class={styles.goBack}>
@@ -117,21 +112,14 @@ function CardPageItem() {
                                 <div key={Math.random()} onClick={changeItemColor} class={styles.colors} style={{ backgroundColor: item }}></div>
                             )} */}
                             {color && color.map(item => {
-                                // if (...) {
-                                //     return <div key={Math.random()} onClick={changeItemColor} class={styles.colors + " " + styles.customColor} style={{ backgroundColor: item }}></div>
-                                // }
                                 return <div key={item} id={item} onClick={changeItemColor} class={styles.colors} style={{ backgroundColor: item }}></div>
                             })}
                         </div>
                         <div class={styles.priceCart}>
                             <p class={styles.price}>{price}</p>
                             <div class={styles.addToCart}>
-                                {/* {isCart ? <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button> : <Button handleClick={() => { openModal() }}>Add to Shopping Cart</Button>} */}
-                                {/* {isCart && <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button>}
-                                {!isCart && <Button disabledButton={buttonDis} handleClick={() => { openModal() }}>Add to Shopping Cart</Button>} */}
                                 {isCart ? <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button>
                                     : <Button disabledButton={buttonDis} handleClick={() => { openModal() }}>Add to Shopping Cart</Button>}
-                                {/* {isCart ? <Button handleClick={() => { openModal() }}>Add to Shopping Cart</Button> : <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button>} */}
                             </div>
                         </div>
                     </div>
@@ -140,9 +128,5 @@ function CardPageItem() {
         </>
     )
 }
-
-
-
-
 
 export default memo(CardPageItem);

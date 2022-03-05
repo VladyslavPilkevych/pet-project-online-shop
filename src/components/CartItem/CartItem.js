@@ -8,18 +8,16 @@ import { Link } from "react-router-dom";
 
 
 function CartItem(props) {
-    const { itemContent: { name, price, url, id, color }, itemContent } = props;
+    const { itemContent: { name, price, url, id, color } } = props;
     const dispatch = useDispatch();
     const openModal = () => {
         dispatch(setIsOpenModal(true));
         dispatch(setConfigModal({ id, toggleAddRemoveItem: true, title: "Delete from cart?", body: "Are you sure you want to delete this item from your shopping cart?" }))
     }
-    // console.log(color);
     return (
         <>
             <div id={id} class={styles.productItem}>
                 <div class={styles.productImg}>
-                    {/* <img src={url} /> */}
                     <Link to={`/card:${id}`}><img src={url} /></Link>
                 </div>
                 <div class={styles.productIist}>
@@ -27,9 +25,7 @@ function CartItem(props) {
                     <div class={styles.stars}></div>
                     <span class={styles.price}>{price}</span>
                     <p class={styles.colorContainer}>Cover color:
-                        {/* <div class={styles.colors} style={{ backgroundColor: color[0] }}></div> */}
                         {color && color.map(item => {
-                            // console.log(item);
                             return <div key={Math.random()} class={styles.colors} style={{ backgroundColor: item }}></div>
                         })}
                     </p>
