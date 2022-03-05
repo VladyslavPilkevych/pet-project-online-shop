@@ -94,7 +94,7 @@ function CardPageItem() {
             <div id={id} class={styles.productItem}>
                 <div class={styles.productImgDiv}>
                     {images &&
-                        <ImageGallery items={images} />
+                        <ImageGallery items={images} showPlayButton={false} thumbnailPosition="right" />
                     }
                 </div>
                 <div class={styles.productIist}>
