@@ -1,12 +1,8 @@
 import Modal from './Modal'
-import { fireEvent, getByText, queryByTestId, queryByText, render, screen } from "@testing-library/react";
-import React, { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { render, screen } from "@testing-library/react";
 import { Provider, useDispatch } from "react-redux";
 import store from "../../store";
 import { setIsOpenModal, setConfigModal } from "../../store/actionCreators/modalAC.js";
-
-
 
 const Component = () => {
     return (
@@ -43,12 +39,4 @@ describe('modal will render', () => {
         x.click();
         expect(screen.queryByTestId('root')).not.toBeInTheDocument()
     })
-    // test('should modal be close by bg', () => {
-    //     const { getByText } = render(<Component />)
-    //     const button = getByText('Open Modal');
-    //     button.click();
-    //     const bg = screen.queryByTestId('root');
-    //     bg.click();
-    //     expect(screen.queryByTestId('root')).not.toBeInTheDocument()
-    // })
 })

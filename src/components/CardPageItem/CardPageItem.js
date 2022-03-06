@@ -5,12 +5,14 @@ import { useHistory } from "react-router-dom";
 import Button from "../Button/Button.js";
 import { ReactComponent as StarIcon } from "../../assets/svg/star-plus.svg";
 import { ReactComponent as StarRemove } from "../../assets/svg/star-remove.svg";
-import { addToFavourite, removeFromFavourite } from "../../store/actionCreators/favouriteAC.js";
-import { setConfigModal, setIsOpenModal } from "../../store/actionCreators/modalAC.js";
-import { fetchData } from "../../store/actionCreators/itemAC.js";
+import { addToFavourite, removeFromFavourite } from "../../store/actionCreators/favouriteAC";
+import { setConfigModal, setIsOpenModal } from "../../store/actionCreators/modalAC";
 import ImageGallery from 'react-image-gallery';
+import { setIsLoading } from "../../store/actionCreators/preloaderAC";
+import Preloader from "../Preloader/Preloader";
 
 function CardPageItem() {
+    const isLoading = useSelector(state => state.loader.isLoading);
     const inFavourite = useSelector((state) => state.favourite.inFavourite);
     const cart = useSelector((state) => state.cart.inCart);
     const allItems = useSelector((state) => state.items.items);
@@ -21,19 +23,20 @@ function CardPageItem() {
     const [buttonDis, setButtonDis] = useState(true);
     const [elemColor, setElemColor] = useState(null);
     const { name, price, url, id, color, img: images } = card;
-    // console.log(url);
-    // console.log(images);
     const dispatch = useDispatch();
     const history = useHistory();
     useEffect(() => {
-        dispatch(fetchData());
+        dispatch(setIsLoading(true));
         const paramsString = document.location.pathname;
         const words = paramsString.split(":");
-        allItems.forEach((item) => {
-            if (item.id === words[1]) {
-                setCard(item);
-            }
-        })
+        setTimeout(() => {
+            allItems.forEach((item) => {
+                if (item.id === words[1]) {
+                    setCard(item);
+                    dispatch(setIsLoading(false));
+                }
+            })
+        }, 1500);
         if (inFavourite) {
             inFavourite.forEach(item => {
                 if (item.id === words[1]) {
@@ -90,42 +93,41 @@ function CardPageItem() {
         setButtonDis(false);
     }
     return (
-        <>
-            <div id={id} class={styles.productItem}>
-                <div class={styles.productImgDiv}>
-                    {images &&
-                        <ImageGallery items={images} showPlayButton={false} thumbnailPosition="right" />
-                    }
-                </div>
-                <div class={styles.productIist}>
-                    <div class={styles.goBack}>
-                        <Button handleClick={() => history.goBack()}>Go Back</Button>
+        <section className={styles.itemPage}>
+            {isLoading ? <Preloader /> :
+                <div id={id} class={styles.productItem}>
+                    <div class={styles.productImgDiv}>
+                        {images &&
+                            <ImageGallery items={images} showPlayButton={false} thumbnailPosition="right" />
+                        }
                     </div>
-                    <div className={styles.favourites}>
-                        <p class={styles.productName}>{name}</p>
-                        {isFavourite ? <StarRemove class={styles.star} onClick={() => removeFromFav(id)} /> : <StarIcon class={styles.star} onClick={() => addToFav(id)} />}
-                    </div>
-                    <div class={styles.productDescr}>
-                        <p class={styles.color}>Color:</p>
-                        <div class={styles.changeColor}>
-                            {/* {color && color.map(item => 
-                                <div key={Math.random()} onClick={changeItemColor} class={styles.colors} style={{ backgroundColor: item }}></div>
-                            )} */}
-                            {color && color.map(item => {
-                                return <div key={item} id={item} onClick={changeItemColor} class={styles.colors} style={{ backgroundColor: item }}></div>
-                            })}
+                    <div class={styles.productIist}>
+                        <div class={styles.goBack}>
+                            <Button handleClick={() => history.goBack()}>Go Back</Button>
                         </div>
-                        <div class={styles.priceCart}>
-                            <p class={styles.price}>{price}</p>
-                            <div class={styles.addToCart}>
-                                {isCart ? <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button>
-                                    : <Button disabledButton={buttonDis} handleClick={() => { openModal() }}>Add to Shopping Cart</Button>}
+                        <div className={styles.favourites}>
+                            <p class={styles.productName}>{name}</p>
+                            {isFavourite ? <StarRemove class={styles.star} onClick={() => removeFromFav(id)} /> : <StarIcon class={styles.star} onClick={() => addToFav(id)} />}
+                        </div>
+                        <div class={styles.productDescr}>
+                            <p class={styles.color}>Color:</p>
+                            <div class={styles.changeColor}>
+                                {color && color.map(item => {
+                                    return <div key={item} id={item} onClick={changeItemColor} class={styles.colors} style={{ backgroundColor: item }}></div>
+                                })}
+                            </div>
+                            <div class={styles.priceCart}>
+                                <p class={styles.price}>{price}</p>
+                                <div class={styles.addToCart}>
+                                    {isCart ? <Button handleClick={() => { openDeleteModal() }}>Delete From Shopping Cart</Button>
+                                        : <Button disabledButton={buttonDis} handleClick={() => { openModal() }}>Add to Shopping Cart</Button>}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
+            }
+        </section>
     )
 }
 

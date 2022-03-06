@@ -1,12 +1,12 @@
 import React, { useEffect, useState, memo } from "react";
 import styles from './CardItem.module.scss';
-import Button from "../Button/Button.js";
+import Button from "../Button/Button";
 import PropTypes from 'prop-types';
 import { ReactComponent as StarIcon } from "../../assets/svg/star-plus.svg";
 import { ReactComponent as StarRemove } from "../../assets/svg/star-remove.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavourite, removeFromFavourite } from "../../store/actionCreators/favouriteAC.js";
-import { setConfigModal, setIsOpenModal } from "../../store/actionCreators/modalAC.js";
+import { addToFavourite, removeFromFavourite } from "../../store/actionCreators/favouriteAC";
+import { setConfigModal, setIsOpenModal } from "../../store/actionCreators/modalAC";
 import { Link } from "react-router-dom";
 
 function CardItem(props) {

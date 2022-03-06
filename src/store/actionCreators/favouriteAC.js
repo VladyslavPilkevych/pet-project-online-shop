@@ -1,4 +1,4 @@
-import { PUT_IN_FAVOURITE, DELETE_FROM_FAVOURITE } from "../actions/favouriteItemsActions.js";
+import { PUT_IN_FAVOURITE, DELETE_FROM_FAVOURITE } from "../actions/favouriteItemsActions";
 
 export const addToFavourite = (id) => {
     return async (dispatch) => {
@@ -11,5 +11,5 @@ export const addToFavourite = (id) => {
     }
 }
 export const removeFromFavourite = (id) => {
-    return {type: DELETE_FROM_FAVOURITE, payload: id}
+    return { type: DELETE_FROM_FAVOURITE, payload: id }
 }

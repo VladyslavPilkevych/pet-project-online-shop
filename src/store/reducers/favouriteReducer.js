@@ -1,4 +1,4 @@
-import { PUT_IN_FAVOURITE, DELETE_FROM_FAVOURITE } from "../actions/favouriteItemsActions.js";
+import { PUT_IN_FAVOURITE, DELETE_FROM_FAVOURITE } from "../actions/favouriteItemsActions";
 import { getItemFromLS, setItemToLS } from "../../utils/localStorage";
 
 getItemFromLS('favourite');

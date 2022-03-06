@@ -1,4 +1,4 @@
-import { PUT_IN_CART, DELETE_FROM_CART, CLEAR_CART } from "../actions/cartItemsActions.js";
+import { PUT_IN_CART, DELETE_FROM_CART, CLEAR_CART } from "../actions/cartItemsActions";
 
 export const addToCart = (id) => {
     return async (dispatch) => {

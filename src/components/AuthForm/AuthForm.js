@@ -3,8 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import styles from "./AuthForm.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import Button from "../Button/Button.js";
-import {clearCart} from "../../store/actionCreators/cartAC.js";
+import Button from "../Button/Button";
+import {clearCart} from "../../store/actionCreators/cartAC";
 import NumberFormat from 'react-number-format';
 
 const AuthForm = () => {

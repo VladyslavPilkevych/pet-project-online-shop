@@ -1,5 +1,5 @@
 import React, {memo} from "react";
-import FavouriteContainer from "../../components/FavouriteContainer/FavouriteContainer.js"
+import FavouriteContainer from "../../components/FavouriteContainer/FavouriteContainer"
 
 const FavouritePage = () => {
     return (

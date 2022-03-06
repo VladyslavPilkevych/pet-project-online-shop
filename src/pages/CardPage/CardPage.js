@@ -1,11 +1,9 @@
 import React, {memo} from "react";
-import CardPageItem from "../../components/CardPageItem/CardPageItem.js";
-
+import CardPageItem from "../../components/CardPageItem/CardPageItem";
 
 const CardPage = () => {
     return (
         <section>
-            {/* <h1>Card:</h1> */}
             <CardPageItem />
         </section>
     )

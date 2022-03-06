@@ -1,15 +1,14 @@
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, memo } from "react";
 import styles from './CardsContainer.module.scss';
-import CardItem from "../CardItem/CardItem.js";
-import PropTypes from 'prop-types';
+import CardItem from "../CardItem/CardItem";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../../store/actionCreators/itemAC.js";
+import { fetchData } from "../../store/actionCreators/itemAC";
 
 function CardsContainer() {
     const items = useSelector(({ items }) => items.items);
     const dispatch = useDispatch();
     useEffect(() => {
-            dispatch(fetchData());
+        dispatch(fetchData());
     }, []);
     return (
         <>

@@ -1,11 +1,10 @@
 import React, { memo } from "react";
 import styles from './CartItem.module.scss';
-import Button from "../Button/Button.js";
+import Button from "../Button/Button";
 import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux";
 import { setConfigModal, setIsOpenModal } from "../../store/actionCreators/modalAC";
 import { Link } from "react-router-dom";
-
 
 function CartItem(props) {
     const { itemContent: { name, price, url, id, color } } = props;

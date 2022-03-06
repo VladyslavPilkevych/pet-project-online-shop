@@ -1,6 +1,5 @@
 import React, {memo} from "react";
-import CartContainer from "../../components/CartContainer/CartContainer.js";
-
+import CartContainer from "../../components/CartContainer/CartContainer";
 
 const CartPage = () => {
     return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import HomePage from "../pages/HomePage/HomePage.js";
-import CartPage from "../pages/CartPage/CartPage.js";
-import CardPage from "../pages/CardPage/CardPage.js";
-import FavouritePage from "../pages/FavouritePage/FavouritePage.js";
-import NoMatchPage from "../pages/NoMatchPage/NoMatchPage.js";
+import HomePage from "../pages/HomePage/HomePage";
+import CartPage from "../pages/CartPage/CartPage";
+import CardPage from "../pages/CardPage/CardPage";
+import FavouritePage from "../pages/FavouritePage/FavouritePage";
+import NoMatchPage from "../pages/NoMatchPage/NoMatchPage";
 
 const Routes = () => {
     return (

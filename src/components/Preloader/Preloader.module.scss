@@ -1,0 +1,40 @@
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mkSpinnerWrap {
+    min-height: 100px;
+    width: 100%;
+    margin-top: 15%;
+    position: relative;
+}
+
+@keyframes a {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}
+.mkSpinnerRing {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    left: 50%;
+    margin-left: -25px;
+    z-index: 1;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #3b5998;
+    border-left-color: transparent;
+    background: transparent;
+    -webkit-animation: a 1s infinite linear;
+    animation: a 1s infinite linear;
+}

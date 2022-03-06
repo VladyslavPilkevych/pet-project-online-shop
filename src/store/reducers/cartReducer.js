@@ -1,4 +1,4 @@
-import { PUT_IN_CART, DELETE_FROM_CART, CLEAR_CART } from "../actions/cartItemsActions.js";
+import { PUT_IN_CART, DELETE_FROM_CART, CLEAR_CART } from "../actions/cartItemsActions";
 import { getItemFromLS, setItemToLS, removeItemFromLS } from "../../utils/localStorage";
 
 getItemFromLS('cart');

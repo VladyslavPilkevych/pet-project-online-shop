@@ -1,16 +1,15 @@
 import React, { memo } from "react";
 import styles from './FavouriteItem.module.scss';
 import PropTypes from 'prop-types';
-import Button from "../Button/Button.js";
+import Button from "../Button/Button";
 import { ReactComponent as StarRemove } from "../../assets/svg/star-remove.svg";
 import { removeFromFavourite } from "../../store/actionCreators/favouriteAC";
 import { useDispatch } from "react-redux";
 import { setConfigModal, setIsOpenModal } from "../../store/actionCreators/modalAC";
 import { Link } from "react-router-dom";
 
-
 function FavouriteItem(props) {
-    const { itemContent, itemContent: { name, price, url, id, color } } = props;
+    const { itemContent: { name, price, url, id, color } } = props;
     const dispatch = useDispatch();
     const removeFromFav = (id) => {
         dispatch(removeFromFavourite(id));
