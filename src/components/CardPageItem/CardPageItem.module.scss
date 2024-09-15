@@ -1,88 +1,102 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 .itemPage {
-    // min-height: 75vh;
-    min-height: 43vh;
+  // min-height: 75vh;
+  min-height: 43vh;
 }
 .goBack {
-    right: 30px;
-    top: 30px;
-    position: absolute;
+  right: 30px;
+  position: absolute;
 }
 .favourites {
-    display: flex;
+  display: flex;
 }
 .star {
-    margin-top: 50px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+  margin-top: 50px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 .productItem {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 .productImgDiv {
-    width: 50%;
-    padding: 5%;
+  width: 50%;
+  padding: 5%;
 }
 .productImg {
-    width: 100%;
-    transition: all 1.5s;
+  width: 100%;
+  transition: all 1.5s;
 }
 .productImg:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .productIist {
-    position: relative;
-    width: 50%;
-    padding: 5%;
-    text-align: center;
-    justify-content: center;
+  position: relative;
+  width: 50%;
+  padding: 5%;
+  text-align: center;
+  justify-content: center;
 }
 .productName {
-    font-weight: 700;
-    font-size: 40px;
-    width: 70%;
+  font-weight: 700;
+  font-size: 40px;
+  width: 70%;
 }
 .productDescr {
-    float: left;
-    padding: 10px;
-    margin-top: 20px;
-    text-align: left;
+  float: left;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: left;
 }
 .color {
-    font-weight: 400;
-    font-size: 20px;
+  font-weight: 400;
+  font-size: 20px;
 }
 .changeColor {
-    display: flex;
+  display: flex;
 }
 .colors {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-right: 20px;
-    margin-top: 5px;
-    cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 5px;
+  cursor: pointer;
 }
 .customColor {
-    margin-top: 0;
-    height: 50px;
-    width: 50px;
-    border: solid 3px black;
+  margin-top: 0;
+  height: 50px;
+  width: 50px;
+  border: solid 3px black;
 }
 .price {
-    margin-top: 50px;
-    font-weight: 300;
-    font-size: 35px;
-    font-style: italic;
+  margin-top: 50px;
+  font-weight: 300;
+  font-size: 35px;
+  font-style: italic;
 }
 .priceCart {
-    display: flex;
+  display: flex;
 }
 .addToCart {
-    margin-top: 30px;
-    margin-left: 20px;
+  margin-top: 30px;
+  margin-left: 20px;
 }
+
+@media (max-width: 768px) {
+    .productItem {
+      flex-direction: column;
+    }
+    .goBack {
+        position: static;
+    }
+    .productImgDiv {
+      width: 100%;
+    }
+    .productIist {
+      width: 100%;
+    }
+  }

@@ -15,7 +15,10 @@ function App() {
         <div className="App">
           <Header />
           <Modal />
+          <div className="main">
+
           <Routes />
+          </div>
           <Footer />
         </div>
       </Router>

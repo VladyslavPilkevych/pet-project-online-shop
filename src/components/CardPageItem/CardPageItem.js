@@ -96,15 +96,15 @@ function CardPageItem() {
         <section className={styles.itemPage}>
             {isLoading ? <Preloader /> :
                 <div id={id} class={styles.productItem}>
+                    <div class={styles.goBack}>
+                        <Button handleClick={() => history.goBack()}>Go Back</Button>
+                    </div>
                     <div class={styles.productImgDiv}>
                         {images &&
                             <ImageGallery items={images} showPlayButton={false} thumbnailPosition="right" />
                         }
                     </div>
                     <div class={styles.productIist}>
-                        <div class={styles.goBack}>
-                            <Button handleClick={() => history.goBack()}>Go Back</Button>
-                        </div>
                         <div className={styles.favourites}>
                             <p class={styles.productName}>{name}</p>
                             {isFavourite ? <StarRemove class={styles.star} onClick={() => removeFromFav(id)} /> : <StarIcon class={styles.star} onClick={() => addToFav(id)} />}

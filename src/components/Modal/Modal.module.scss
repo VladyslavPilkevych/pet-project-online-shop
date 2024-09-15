@@ -52,8 +52,8 @@ h2 {
 .modal {
     text-align: center;
     background-color: rgb(212, 159, 159);
-    height: 270px;
-    width: 520px;
+    // height: 270px;
+    max-width: 520px;
     margin: 10% auto;
     border-radius: 10px;
     background-color: #558cdd;
