@@ -22,7 +22,7 @@ function FavouriteItem(props) {
         <>
             <div id={id} class={styles.productItem}>
                 <div class={styles.productImg}>
-                    <Link to={`/card:${id}`}><img src={url} /></Link>
+                    <Link to={`/card:${id}`}><img src={url} alt="card-img" /></Link>
 
                 </div>
                 <div class={styles.productIist}>

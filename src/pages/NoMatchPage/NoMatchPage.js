@@ -1,5 +1,4 @@
-import React, { useEffect, useState, memo } from "react";
-import CardsContainer from "../../components/CardsContainer/CardsContainer";
+import React, { memo } from "react";
 
 const HomePage = () => {
     return (

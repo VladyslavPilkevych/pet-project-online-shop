@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo, PureComponent } from "react";
+import React, { useEffect, useState, memo } from "react";
 import styles from './CardPageItem.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -22,7 +22,7 @@ function CardPageItem() {
     const [card, setCard] = useState(false);
     const [buttonDis, setButtonDis] = useState(true);
     const [elemColor, setElemColor] = useState(null);
-    const { name, price, url, id, color, img: images } = card;
+    const { name, price, id, color, img: images } = card;
     const dispatch = useDispatch();
     const history = useHistory();
     useEffect(() => {
@@ -54,12 +54,14 @@ function CardPageItem() {
         if (elemColor) {
             document.getElementById(elemColor).classList.add(styles.customColor);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     useEffect(() => {
         setCounter(prevCount => prevCount += 1);
         if (counter !== 0) {
             setIsCart(prevState => !prevState);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart]);
     const addToFav = (id) => {
         dispatch(addToFavourite(id));

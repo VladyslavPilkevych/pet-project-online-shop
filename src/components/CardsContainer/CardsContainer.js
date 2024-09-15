@@ -9,6 +9,7 @@ function CardsContainer() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchData());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <>

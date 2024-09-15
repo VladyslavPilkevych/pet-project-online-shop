@@ -22,6 +22,7 @@ function CardItem(props) {
                 }
             })
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const addToFav = (id) => {
         dispatch(addToFavourite(id));
@@ -39,7 +40,7 @@ function CardItem(props) {
         <>
             <div id={id} class={styles.productItem}>
                 <div class={styles.productImg}>
-                    <Link to={`/card:${id}`}><img src={url} /></Link>
+                    <Link to={`/card:${id}`}><img src={url} alt="card-img" /></Link>
                 </div>
                 <div class={styles.productIist}>
                     <h3>{name}</h3>
